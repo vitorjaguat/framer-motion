@@ -62,6 +62,12 @@ const Header = () => {
         //stiffness: 500 produces more bouncing in 'spring' type
       >
         <h1>Pizza Joint</h1>
+        <motion.div
+          className='bar'
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1, originX: 0 }}
+          transition={{ delay: 1.3, duration: 2 }}
+        ></motion.div>
       </motion.div>
     </header>
   );
