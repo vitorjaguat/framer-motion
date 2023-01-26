@@ -27,10 +27,21 @@ function App() {
     setPizza({ ...pizza, toppings: newToppings });
   };
 
+  const resetPizza = () => {
+    setPizza({
+      base: '',
+      toppings: [],
+    });
+  };
+
   return (
     <>
       <Header />
-      <Modal showModal={showModal} setShowModal={setShowModal} />
+      <Modal
+        showModal={showModal}
+        setShowModal={setShowModal}
+        resetPizza={resetPizza}
+      />
       <AnimatePresence
         exitBeforeEnter
         onExitComplete={() => setShowModal(false)}
