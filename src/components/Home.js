@@ -44,10 +44,10 @@ const Home = () => {
       animate='visible'
       exit='exit'
     >
-      <h2>Welcome to Pizza Joint</h2>
-      <Link to='/base'>
+      <h2>Welcome to Make-A-Pie</h2>
+      <Link to='/type'>
         <motion.button variants={buttonVariants} whileHover='hover'>
-          Create Your Pizza
+          Create Your Pie
         </motion.button>
       </Link>
       <Loader />

@@ -36,7 +36,7 @@ const buttonVariants = {
   },
 };
 
-const Toppings = ({ addTopping, pizza }) => {
+const Toppings = ({ addTopping, pie }) => {
   let toppings = [
     'mushrooms',
     'peppers',
@@ -57,7 +57,7 @@ const Toppings = ({ addTopping, pizza }) => {
       <h3>Step 2: Choose Toppings</h3>
       <ul>
         {toppings.map((topping) => {
-          let spanClass = pizza.toppings.includes(topping) ? 'active' : '';
+          let spanClass = pie.toppings.includes(topping) ? 'active' : '';
           return (
             <motion.li
               key={topping}

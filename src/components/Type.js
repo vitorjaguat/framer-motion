@@ -49,8 +49,8 @@ const buttonVariants = {
   },
 };
 
-const Base = ({ addBase, pie }) => {
-  const bases = ['Classic', 'Thin & Crispy', 'Thick Crust', 'Whole grains'];
+const Type = ({ addType, pie }) => {
+  const types = ['Salty', 'Sweet'];
 
   return (
     <motion.div
@@ -60,24 +60,24 @@ const Base = ({ addBase, pie }) => {
       animate='visible'
       exit='exit'
     >
-      <h3>Step 1: Choose Your Base</h3>
+      <h3>Step 1: Salty or Sweet?</h3>
       <ul>
-        {bases.map((base) => {
-          let spanClass = pie.base === base ? 'active' : '';
+        {types.map((type) => {
+          let spanClass = pie.type === type ? 'active' : '';
           return (
             <motion.li
-              key={base}
-              onClick={() => addBase(base)}
+              key={type}
+              onClick={() => addType(type)}
               whileHover={{ scale: 1.3, originX: 0, color: '#f8e112' }}
               transition={{ type: 'spring', stiffness: 200 }}
             >
-              <span className={spanClass}>{base}</span>
+              <span className={spanClass}>{type}</span>
             </motion.li>
           );
         })}
       </ul>
 
-      {pie.base && (
+      {pie.type && (
         <motion.div
           className='next'
           variants={nextVariants}
@@ -86,7 +86,7 @@ const Base = ({ addBase, pie }) => {
           //no need to declare initial and animate because it follows the same pattern as this element's parent,
           //and framer-motion variants propagate to children
         >
-          <Link to='/toppings'>
+          <Link to='/base'>
             <motion.button variants={buttonVariants} whileHover='hover'>
               Next
             </motion.button>
@@ -97,4 +97,4 @@ const Base = ({ addBase, pie }) => {
   );
 };
 
-export default Base;
+export default Type;

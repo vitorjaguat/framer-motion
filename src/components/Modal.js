@@ -19,9 +19,9 @@ const modalVariants = {
   },
 };
 
-const Modal = ({ showModal, setShowModal, resetPizza }) => {
+const Modal = ({ showModal, setShowModal, resetPie }) => {
   const handleClick = () => {
-    resetPizza();
+    resetPie();
     setShowModal(false);
   };
 
@@ -36,7 +36,7 @@ const Modal = ({ showModal, setShowModal, resetPizza }) => {
           exit='hidden'
         >
           <motion.div className='modal' variants={modalVariants}>
-            <p>Want to make another pizza?</p>
+            <p>Want to make another pie?</p>
             <Link to='/'>
               <button onClick={handleClick}>Start again</button>
             </Link>

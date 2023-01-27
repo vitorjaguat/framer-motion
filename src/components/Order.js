@@ -34,7 +34,7 @@ const childVariants = {
   },
 };
 
-const Order = ({ pizza, setShowModal }) => {
+const Order = ({ pie, setShowModal }) => {
   useEffect(() => {
     setTimeout(() => setShowModal(true), 4000);
   }, [setShowModal]);
@@ -50,10 +50,10 @@ const Order = ({ pizza, setShowModal }) => {
       <h2 exit={{ y: -1000 }}>Thank you for your order</h2>
 
       <motion.p variants={childVariants}>
-        You ordered a {pizza.base} pizza with:
+        You ordered a {pie.base} pie with:
       </motion.p>
       <motion.div variants={childVariants}>
-        {pizza.toppings.map((topping) => (
+        {pie.toppings.map((topping) => (
           <div key={topping}>{topping}</div>
         ))}
       </motion.div>
