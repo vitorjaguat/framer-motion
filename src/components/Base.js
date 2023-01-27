@@ -60,7 +60,7 @@ const Base = ({ addBase, pie }) => {
       animate='visible'
       exit='exit'
     >
-      <h3>Step 1: Choose Your Base</h3>
+      <h3>Step 2: Choose Your Base</h3>
       <ul>
         {bases.map((base) => {
           let spanClass = pie.base === base ? 'active' : '';
@@ -86,7 +86,7 @@ const Base = ({ addBase, pie }) => {
           //no need to declare initial and animate because it follows the same pattern as this element's parent,
           //and framer-motion variants propagate to children
         >
-          <Link to='/toppings'>
+          <Link to='/filling'>
             <motion.button variants={buttonVariants} whileHover='hover'>
               Next
             </motion.button>

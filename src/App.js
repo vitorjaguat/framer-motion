@@ -4,14 +4,14 @@ import Header from './components/Header';
 import Home from './components/Home';
 import Type from './components/Type';
 import Base from './components/Base';
-import Toppings from './components/Toppings';
+import Filling from './components/Filling';
 import Order from './components/Order';
 import Modal from './components/Modal';
 import { AnimatePresence } from 'framer-motion';
 
 function App() {
   const location = useLocation(); //this will change whenever the route changes
-  const [pie, setPie] = useState({ type: '', base: '', toppings: [] });
+  const [pie, setPie] = useState({ type: '', base: '', filling: [] });
   const [showModal, setShowModal] = useState(false);
 
   const addType = (type) => {
@@ -22,20 +22,20 @@ function App() {
     setPie({ ...pie, base });
   };
 
-  const addTopping = (topping) => {
-    let newToppings;
-    if (!pie.toppings.includes(topping)) {
-      newToppings = [...pie.toppings, topping];
+  const addFilling = (filling) => {
+    let newFilling;
+    if (!pie.filling.includes(filling)) {
+      newFilling = [...pie.filling, filling];
     } else {
-      newToppings = pie.toppings.filter((item) => item !== topping);
+      newFilling = pie.filling.filter((item) => item !== filling);
     }
-    setPie({ ...pie, toppings: newToppings });
+    setPie({ ...pie, filling: newFilling });
   };
 
   const resetPie = () => {
     setPie({
       base: '',
-      toppings: [],
+      filling: [],
     });
   };
 
@@ -58,8 +58,8 @@ function App() {
           <Route path='/base'>
             <Base addBase={addBase} pie={pie} />
           </Route>
-          <Route path='/toppings'>
-            <Toppings addTopping={addTopping} pie={pie} />
+          <Route path='/filling'>
+            <Filling addFilling={addFilling} pie={pie} />
           </Route>
           <Route path='/order'>
             <Order pie={pie} setShowModal={setShowModal} />

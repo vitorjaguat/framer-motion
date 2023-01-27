@@ -36,7 +36,7 @@ const childVariants = {
 
 const Order = ({ pie, setShowModal }) => {
   useEffect(() => {
-    setTimeout(() => setShowModal(true), 4000);
+    setTimeout(() => setShowModal(true), 6000);
   }, [setShowModal]);
 
   return (
@@ -50,11 +50,11 @@ const Order = ({ pie, setShowModal }) => {
       <h2 exit={{ y: -1000 }}>Thank you for your order</h2>
 
       <motion.p variants={childVariants}>
-        You ordered a {pie.base} pie with:
+        You ordered a {pie.type} Pie with {pie.base} base, filled with:
       </motion.p>
       <motion.div variants={childVariants}>
-        {pie.toppings.map((topping) => (
-          <div key={topping}>{topping}</div>
+        {pie.filling.map((filling) => (
+          <div key={filling}>{filling}</div>
         ))}
       </motion.div>
     </motion.div>
